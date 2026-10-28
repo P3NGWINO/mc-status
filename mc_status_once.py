@@ -29,7 +29,10 @@ def build_embed(data):
             "inline": True,
         },
     ]
-    names = [p["name"] for p in players.get("list", [])] if online else []
+    version = (data.get("version") or {}).get("name_clean")
+    if online and version:
+        fields[1]["value"] = f"Java {version}"
+    names = [p["name_clean"] for p in players.get("list", [])] if online else []
     if names:
         fields.append({"name": "Online now", "value": ", ".join(names), "inline": False})
 
