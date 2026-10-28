@@ -6,7 +6,7 @@ import requests
 
 WEBHOOK_URL = os.environ["WEBHOOK_URL"]
 MESSAGE_ID = os.environ.get("MESSAGE_ID", "").strip()
-SERVER = "malls-usability.tun.ply.gg"
+SERVER = "69.9.179.16"
 
 
 def get_status():
