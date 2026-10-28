@@ -6,12 +6,12 @@ import requests
 
 WEBHOOK_URL = os.environ["WEBHOOK_URL"]
 MESSAGE_ID = os.environ.get("MESSAGE_ID", "").strip()
-SERVER = "69.9.179.16"
+SERVER = "malls-usability.tun.ply.gg"
 
 
 def get_status():
     try:
-        r = requests.get(f"https://api.mcsrvstat.us/3/{SERVER}", timeout=15)
+        r = requests.get(f"https://api.mcstatus.io/v2/status/java/{SERVER}", timeout=15)
         return r.json()
     except Exception:
         return {"online": False}
